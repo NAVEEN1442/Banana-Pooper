@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import "./App.css";
+import fartSoundFile from "./assets/fart-noise.mp3";
 
-function App() {
+const App = () => {
+  const handleButtonClick = () => {
+    const audio = new Audio(fartSoundFile);
+    audio.play();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="container">
+        <button className="fart-button" onClick={handleButtonClick}>
+          🍌 Click Me!
+        </button>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
